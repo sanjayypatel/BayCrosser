@@ -1,0 +1,15 @@
+.stops-list
+  - @stops.each do |stop|
+    .one-per-line-centered
+      .stop-list-entry
+        %h2= stop.name
+        .grid-layout
+          .grid-items
+            %p.text-label= "Stop Id:"
+            %p= stop.stop_id
+          .grid-items
+            %p.text-label= "Latitude:"
+            %p= stop.latitude.to_s
+          .grid-items
+            %p.text-label= "Longitude:"
+            %p= stop.longitude.to_s
