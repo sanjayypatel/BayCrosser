@@ -1,11 +1,10 @@
-= link_to bus_route_trip_path(bus_route, trip.trip_id) do
-  .trip-list-item
-    .trip-list-entry
-      .grid-layout
-        .col-sm-12.text-center
-          %h4= trip.direction
-      .grid-layout
-        .trip-list-entry-item
-          %p.text-center= trip.schedule_type_to_s
-        .trip-list-entry-item
-          %p.text-center= trip.start_time_to_s
+.trip-list-item
+  .trip-list-entry
+    .grid-layout
+      .col-sm-12.text-center
+        %h4= trip.direction
+    .grid-layout
+      .trip-list-entry-item
+        %p.text-center= trip.schedule_type_to_s
+      .trip-list-entry-item
+        %p.text-center= trip.start_time_to_s
