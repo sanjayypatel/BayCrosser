@@ -1,11 +1,7 @@
 .bus-route-summary
-  %h1= @bus_route.name
-  %p= @bus_route.description
+  %h1.text-center= @bus_route.name
+  %p.text-center= @bus_route.description
   .grid-layout
-    %h1.text-center= "#{@bus_route.direction_a} Trips"
-    - @trip_array_a.each do |trip|
-      = render partial: 'trips/list_entry', locals: {trip: trip}
-  .grid-layout
-    %h1.text-center= "#{@bus_route.direction_b} Trips"
-    - @trip_array_b.each do |trip|
-      = render partial: 'trips/list_entry', locals: {trip: trip}
+    %h1.text-center= "#{@direction} Trips"
+    - @trip_array.each do |trip|
+      = render partial: 'trips/list_entry', locals: {bus_route: @bus_route, trip: trip}

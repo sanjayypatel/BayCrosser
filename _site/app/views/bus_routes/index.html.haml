@@ -1,0 +1,10 @@
+%h2.text-center All Transbay Bus Routes
+- if @bus_routes.count == 0
+  .text-center
+    = link_to "Refresh Routes", refresh_bus_routes_path
+.grid-layout
+  - @bus_routes.each do |bus_route|
+    .grid-item
+      .bus-route-list-entry
+        %h3= link_to bus_route.name, bus_route_path(bus_route)
+        %small= bus_route.description

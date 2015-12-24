@@ -8,3 +8,6 @@
       .bus-route-list-entry
         %h3= link_to bus_route.name, bus_route_path(bus_route)
         %small= bus_route.description
+        %ul.nav.nav-pills
+          %li= link_to "#{bus_route.direction_a}", bus_route_path(bus_route, :direction => bus_route.direction_a)
+          %li= link_to "#{bus_route.direction_b}", bus_route_path(bus_route, :direction => bus_route.direction_b)

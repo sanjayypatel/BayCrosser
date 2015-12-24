@@ -7,26 +7,34 @@ class BusRoutesController < ApplicationController
 
   def show
     @bus_route = BusRoute.find(params[:id])
-
     @fetched_trips = ACTransitRails.get_trips(@bus_route.name)
-    @trip_array_a = []
-    @trip_array_b = []
+    @trip_array = []
     @fetched_trips.each do |trip_hash|
-      new_trip = Trip.new(
-        trip_hash["TripId"],
-        @bus_route.id,
-        trip_hash["ScheduleType"],
-        trip_hash["StartTime"],
-        trip_hash["Direction"]
-      )
-      if new_trip.direction == @bus_route.direction_a
-        @trip_array_a << new_trip
+      if params[:direction]
+        @direction = params[:direction]
+        if params[:direction] == trip_hash["Direction"]
+          new_trip = Trip.new(
+            trip_hash["TripId"],
+            @bus_route.id,
+            trip_hash["ScheduleType"],
+            trip_hash["StartTime"],
+            trip_hash["Direction"]
+          )
+          @trip_array << new_trip
+        end
       else
-        @trip_array_b << new_trip
+        @direction = "#{@bus_route.direction_a} \& #{@bus_route.direction_b}"
+        new_trip = Trip.new(
+          trip_hash["TripId"],
+          @bus_route.id,
+          trip_hash["ScheduleType"],
+          trip_hash["StartTime"],
+          trip_hash["Direction"]
+        )
+        @trip_array << new_trip
       end
     end
-    @trip_array_a.sort_by!{|x| [x.schedule_type, x.start_time]}
-    @trip_array_b.sort_by!{|x| [x.schedule_type, x.start_time]}
+    @trip_array.sort_by!{|x| [x.direction, x.schedule_type, x.start_time]}
   end
 
   def create
