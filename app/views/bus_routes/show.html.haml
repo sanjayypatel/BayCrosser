@@ -1,7 +1,11 @@
-.bus-route-summary
-  %h2.text-center= @bus_route.name
-  %p.text-center= @bus_route.description
-  .grid-layout
-    %h2.text-center= "#{@direction} Trips"
-    - @trip_array.each do |trip|
-      = render partial: 'trips/list_entry', locals: {bus_route: @bus_route, trip: trip}
+%h2.text-center= @bus_route.name + " - #{@direction} Trips"
+.grid-layout
+  - @trip_array.each do |trip|
+    .full-length-item
+      .trip-list-entry
+        .start-time-box
+          .start-time= trip.start_time_to_s
+        .trip-direction-box
+          .trip-direction=  trip.direction_to_s
+        .schedule-type-box
+          .schedule-type= trip.schedule_type_to_s

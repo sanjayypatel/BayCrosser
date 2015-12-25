@@ -13,16 +13,26 @@ class Trip
   def schedule_type_to_s
     case schedule_type
     when 0
-      return "Weekday"
+      return "M-F"
     when 5
-      return "Saturday"
+      return "Sa"
     when 6
-      return "Sunday"
+      return "Su"
     end
   end
 
   def start_time_to_s
     return DateTime.parse(start_time).strftime("%I:%M %p")
+  end
+
+  def direction_to_s
+    bus_route = BusRoute.find(self.bus_route_id)
+    if self.direction == "Westbound"
+      direction = "To SF"
+    else
+      direction = "To #{bus_route.description_to_s}"
+    end
+    return direction
   end
 
 end

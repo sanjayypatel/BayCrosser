@@ -8,7 +8,6 @@
   %body
     %header
       %h1= link_to "BayCrosser", root_path
-      .navigation-buttons
-        .btn.btn-default= link_to "All Routes", bus_routes_path
+      .all-routes-link= link_to "All Routes", bus_routes_path
     .container
       = yield

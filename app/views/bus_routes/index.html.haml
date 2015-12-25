@@ -4,10 +4,11 @@
     = link_to "Refresh Routes", refresh_bus_routes_path
 .grid-layout
   - @bus_routes.each do |bus_route|
-    .grid-item
+    .full-length-item
       .bus-route-list-entry
-        %h3= link_to bus_route.name, bus_route_path(bus_route)
-        %small= bus_route.description
-        .direction-buttons
-          .btn.btn-default= link_to "#{bus_route.direction_a}", bus_route_path(bus_route, :direction => bus_route.direction_a)
-          .btn.btn-default= link_to "#{bus_route.direction_b}", bus_route_path(bus_route, :direction => bus_route.direction_b)
+        .route-name-box
+          .route-name= link_to bus_route.name, bus_route_path(bus_route)
+        .direction-b-box
+          .direction-button= link_to "To SF", bus_route_path(bus_route, :direction => bus_route.direction_b)
+        .direction-a-box
+          .direction-button= link_to "To #{bus_route.description_to_s}", bus_route_path(bus_route, :direction => bus_route.direction_a)

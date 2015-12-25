@@ -21,38 +21,19 @@ $link-color: white;
 /*************************
   GRID SETTINGS
 *************************/
-.stops-list,
+* {
+  color: white;
+}
 .grid-layout {
   @extend .row;
 }
-.grid-item {
-  @extend .col-lg-3;
-  @extend .col-md-6;
+.full-length-item {
+  @extend .col-sm-12;
 }
-.one-per-line-centered {
-  @extend .col-lg-6;
-  @extend .col-lg-offset-3;
-}
-.trip-list-item{
-  @extend .col-lg-3;
-  @extend .col-md-4;
-  @extend .col-sm-6;
-}
-.trip-list-entry-item{
-  @extend .col-xs-6;
-}
-.stop-list-entry,
-.bus-route-list-entry {
-  border: 1px lightgrey solid;
-  border-radius: 0.5em;
+.stop-list-entry{
+  @extend .row;
+  border: 2px white solid;
   padding: 0 0 1em 1em;
-  margin-bottom: 1em;
-  box-shadow: 1px 1px 5px lightgrey;
-}
-.trip-list-entry{
-  border: 1px lightgrey solid;
-  border-radius: 0.5em;
-  padding: 0 1em;
   margin-bottom: 1em;
   box-shadow: 1px 1px 5px lightgrey;
 }
@@ -60,21 +41,30 @@ $link-color: white;
   @extend .btn;
   @extend .btn-default;
 }
-
+a {
+  color: $link-color;
+}
+a:hover {
+  text-decoration: none;
+  color: $link-color;
+}
 .text-label{
   font-size: 1.25em;
   font-style: italic;
 }
 body {
   background: darkblue;
-  background: linear-gradient(to bottom, #526791 0%,#c96c6c 50%,#f2cb82 100%);
+  // background: linear-gradient(to bottom, #526791 0%,#c96c6c 50%,#f2cb82 100%);
+  background: linear-gradient(to bottom, #526791 0%,#c63939 50%,#ce6335 100%);
 }
 header {
-  padding: 4em 0;
+  padding: 0;
   color: white;
+  margin: 0;
   h1 {
+    font-size: 5em;
     text-align: center;
-    margin-bottom: 1em;
+    margin: 0.5em 0;
     a {
       color: $link-color;
     }
@@ -85,19 +75,83 @@ header {
   }
 }
 h2 {
-  margin-bottom: 1em;
+  font-size: 4em;
+  margin: 0.5em 0;
 }
 .container {
-  background: white;
-  border-radius: 0.5em;
   margin-bottom: 1em;
+  padding: 0 4em;
+  p {
+    font-size: 2em;
+  }
 }
 .navigation-buttons {
   margin: 0 auto;
-  width: 100px;
+  width: 10px;
 }
-.direction-buttons {
-  margin: 0 auto;
-  width: 100%;
-  padding: 0.5em 1 0 1em;
+.all-routes-link {
+  font-size: 4em;
+  text-align: center;
+  margin: 0.5em 25% 0.5em 25%;
+  border: 2px white solid;
+  a {
+    color: $link-color;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $link-color;
+  }
+}
+.bus-route-list-entry {
+  @extend .row;
+  border: 2px white solid;
+  margin-bottom: 1.5em;
+}
+.route-name-box {
+  @extend .col-sm-2;
+}
+.route-name{
+  font-size: 3em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+.direction-a-box {
+  @extend .col-sm-7;
+}
+.direction-b-box {
+  @extend .col-sm-3;
+}
+.direction-button{
+  font-size: 3em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+.trip-list-entry{
+  @extend .row;
+  border: 2px white solid;
+  margin-bottom: 1.5em;
+}
+.start-time-box {
+  @extend .col-sm-4;
+}
+.start-time {
+  font-size: 3em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+.trip-direction-box{
+  @extend .col-sm-6;
+}
+.trip-direction {
+  font-size: 3em;
+  padding: 0.5em 0;
+  text-align: center;
+}
+.schedule-type-box {
+  @extend .col-sm-2;
+}
+.schedule-type {
+  font-size: 3em;
+  padding: 0.5em 0;
+  text-align: center;
 }

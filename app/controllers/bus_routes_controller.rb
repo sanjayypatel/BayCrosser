@@ -11,7 +11,11 @@ class BusRoutesController < ApplicationController
     @trip_array = []
     @fetched_trips.each do |trip_hash|
       if params[:direction]
-        @direction = params[:direction]
+        if params[:direction] == "Westbound"
+          @direction = "To SF"
+        else
+          @direction = "To #{@bus_route.description_to_s}"
+        end
         if params[:direction] == trip_hash["Direction"]
           new_trip = Trip.new(
             trip_hash["TripId"],
@@ -23,7 +27,7 @@ class BusRoutesController < ApplicationController
           @trip_array << new_trip
         end
       else
-        @direction = "#{@bus_route.direction_a} \& #{@bus_route.direction_b}"
+        @direction = nil
         new_trip = Trip.new(
           trip_hash["TripId"],
           @bus_route.id,
