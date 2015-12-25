@@ -16,7 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-$link-color: black;
+$link-color: white;
 
 /*************************
   GRID SETTINGS
@@ -47,21 +47,14 @@ $link-color: black;
   border-radius: 0.5em;
   padding: 0 0 1em 1em;
   margin-bottom: 1em;
+  box-shadow: 1px 1px 5px lightgrey;
 }
 .trip-list-entry{
   border: 1px lightgrey solid;
   border-radius: 0.5em;
   padding: 0 1em;
   margin-bottom: 1em;
-}
-h1 {
-  a {
-    color: $link-color;
-  }
-  a:hover {
-    text-decoration: none;
-    color: $link-color;
-  }
+  box-shadow: 1px 1px 5px lightgrey;
 }
 .button {
   @extend .btn;
@@ -71,4 +64,40 @@ h1 {
 .text-label{
   font-size: 1.25em;
   font-style: italic;
+}
+body {
+  background: darkblue;
+  background: linear-gradient(to bottom, #526791 0%,#c96c6c 50%,#f2cb82 100%);
+}
+header {
+  padding: 4em 0;
+  color: white;
+  h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    a {
+      color: $link-color;
+    }
+    a:hover {
+      text-decoration: none;
+      color: $link-color;
+    }
+  }
+}
+h2 {
+  margin-bottom: 1em;
+}
+.container {
+  background: white;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+.navigation-buttons {
+  margin: 0 auto;
+  width: 100px;
+}
+.direction-buttons {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.5em 1 0 1em;
 }

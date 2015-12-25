@@ -1,4 +1,3 @@
-!!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -7,9 +6,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
+    %header
+      %h1= link_to "BayCrosser", root_path
+      .navigation-buttons
+        .btn.btn-default= link_to "All Routes", bus_routes_path
     .container
-      %h1
-        = link_to "BayCrosser", root_path
-      %ul.nav.nav-pills
-        %li= link_to "All Routes", bus_routes_path
       = yield
