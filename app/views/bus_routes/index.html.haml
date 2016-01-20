@@ -1,6 +1,6 @@
-%h2.text-center All Transbay Bus Routes
+%h2 All Transbay Bus Routes
 - if @bus_routes.count == 0
-  .text-center
+  .refresh-routes-link
     = link_to "Refresh Routes", refresh_bus_routes_path
 .grid-layout
   - @bus_routes.each do |bus_route|

@@ -49,7 +49,7 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'actransit_rails'
+gem 'actransit_rails', '~> 0.3.0'
 
 gem 'figaro'
 

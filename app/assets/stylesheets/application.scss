@@ -15,7 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+@import url(https://fonts.googleapis.com/css?family=Questrial);
 $link-color: white;
 
 /*************************
@@ -23,6 +23,7 @@ $link-color: white;
 *************************/
 * {
   color: white;
+  font-family: 'Questrial', sans-serif;
 }
 .grid-layout {
   @extend .row;
@@ -75,6 +76,7 @@ header {
   }
 }
 h2 {
+  text-align: center;
   font-size: 4em;
   margin: 0.5em 0;
 }
@@ -89,6 +91,7 @@ h2 {
   margin: 0 auto;
   width: 10px;
 }
+.refresh-routes-link,
 .all-routes-link {
   font-size: 4em;
   text-align: center;

@@ -36,7 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    actransit_rails (0.2.0)
+    actransit_rails (0.3.0)
       json
     arel (6.0.3)
     autoprefixer-rails (6.0.1)
@@ -174,7 +174,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actransit_rails
+  actransit_rails (~> 0.3.0)
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
