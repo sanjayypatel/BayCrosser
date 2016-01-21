@@ -61,12 +61,6 @@ class BusRoutesController < ApplicationController
             direction_b: fetched_directions[1]
           )
           new_bus_route.save
-          # fetched_stops = ACTransitRails.get_stops(new_bus_route.name)
-          # fetched_stops.each do |stop|
-          #   puts "Fetched Stop #{stop}"
-          #   new_stop = Stop.new(name: stop["Name"], stop_id: stop["StopId"], latitude: stop["Latitude"], longitude: stop["Longitude"], bus_route: new_bus_route)
-          #   new_stop.save
-          # end
         end
       end
     end

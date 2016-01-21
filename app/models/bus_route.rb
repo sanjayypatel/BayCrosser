@@ -1,5 +1,4 @@
 class BusRoute < ActiveRecord::Base
-  has_many :stops
 
   def description_to_s
     description_string = self.description

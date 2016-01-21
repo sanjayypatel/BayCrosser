@@ -58,3 +58,5 @@ gem 'bootstrap-sass'
 gem 'haml'
 
 gem 'haml-rails'
+
+gem 'pry-rails'

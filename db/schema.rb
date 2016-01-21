@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151223090928) do
+ActiveRecord::Schema.define(version: 20160120174750) do
 
   create_table "bus_routes", force: :cascade do |t|
     t.string   "name"
@@ -21,17 +21,5 @@ ActiveRecord::Schema.define(version: 20151223090928) do
     t.string   "direction_a"
     t.string   "direction_b"
   end
-
-  create_table "stops", force: :cascade do |t|
-    t.string   "stop_id"
-    t.string   "name"
-    t.decimal  "latitude",     precision: 10, scale: 6
-    t.decimal  "longitude",    precision: 10, scale: 6
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "bus_route_id"
-  end
-
-  add_index "stops", ["bus_route_id"], name: "index_stops_on_bus_route_id"
 
 end

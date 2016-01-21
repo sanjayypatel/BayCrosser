@@ -4,7 +4,7 @@
     .full-length-item
       .trip-list-entry
         .start-time-box
-          .start-time= trip.start_time_to_s
+          .start-time= link_to trip.start_time_to_s, bus_route_trip_path(@bus_route, trip.trip_id)
         .trip-direction-box
           .trip-direction=  trip.direction_to_s
         .schedule-type-box
